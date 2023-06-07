@@ -1,0 +1,39 @@
+{
+	"name": "hono-test",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"typecheck": "tsc --noEmit",
+		"lint": "npx eslint src/**/*.ts",
+		"lint:fix": "npx eslint --fix src/**/*.ts",
+		"dev": "npx wrangler dev --config ./dist/wrangler.toml",
+		"build": "node ./build.mjs & tsc --emitDeclarationOnly --declaration & tsc-alias",
+		"preview": "aerofoil port-runner \"npx wrangler dev --config ./dist/wrangler.toml --port {port}\"",
+		"start": "aerofoil no-op",
+		"deploy:production": "aerofoil deploy --local-package --production",
+		"deploy:branch": "aerofoil deploy --local-package --branch"
+	},
+	"types": "./dist/index.d.ts",
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"devDependencies": {
+		"@aerofoil/af-ext-cloudflare": "^0.5.0",
+		"@cloudflare/workers-types": "^4.20230321.0",
+		"eslint": "^7.23.0",
+		"eslint-config-aerofoil": "workspace:*",
+		"fs-extra": "^11.1.1",
+		"json2toml": "^4.0.1",
+		"tsc-alias": "^1.8.6",
+		"tsconfig": "workspace:*",
+		"typescript": "^5.0.2",
+		"wrangler": "^2.13.0"
+	},
+	"dependencies": {
+		"hono": "^3.2.4",
+		"nanoid": "^4.0.2"
+	}
+}
