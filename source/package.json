@@ -30,7 +30,7 @@
 		"tsc-alias": "^1.8.6",
 		"tsconfig": "workspace:*",
 		"typescript": "^5.0.2",
-		"wrangler": "^2.13.0"
+		"wrangler": "^3.1.0"
 	},
 	"dependencies": {
 		"hono": "^3.2.4",
