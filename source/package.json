@@ -1,5 +1,5 @@
 {
-	"name": "hono-test",
+	"name": "@@name@@",
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
@@ -12,6 +12,7 @@
 		"start": "aerofoil no-op",
 		"deploy:production": "aerofoil deploy --local-package"
 	},
+	"type": "module",
 	"types": "./dist/index.d.ts",
 	"exports": {
 		"./package.json": "./package.json",

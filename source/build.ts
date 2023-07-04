@@ -3,9 +3,15 @@ import { getTargetEnv } from "@aerofoil/aerofoil-core/util/getTargetEnv";
 import type { ReadonlyDeep } from "type-fest";
 import { z } from "zod";
 
-const envValidation = z.object({});
+//* import.meta.url is part of node types
+//* this deployment is for cloudflare workers so the tsconfig reflects that
+//* however this build file is run by node so we just override the type here
+interface ImportMeta {
+	url: string;
+}
 
-const env = await getTargetEnv("test", envValidation);
+const envValidation = z.object({});
+const env = await getTargetEnv((import.meta as ImportMeta).url, envValidation);
 
 export type EnvType = ReadonlyDeep<z.infer<typeof envValidation>>;
 
