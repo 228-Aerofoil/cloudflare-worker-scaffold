@@ -1,14 +1,14 @@
 {
-	"extends": "tsconfig/ts-cf-worker.json",
-	"include": ["./src/**/*", ".eslintrc.js", "build.mjs"],
-	"exclude": ["node_modules"],
-	"compilerOptions": {
-		"types": ["@cloudflare/workers-types"],
-		"baseUrl": "./",
-		"paths": {
-			"~/*": ["./src/*"]
-		},
-		"outDir": "./dist",
-		"declarationDir": "./dist"
-	}
+  "extends": "tsconfig/ts-cf-worker.json",
+  "include": ["./src/**/*", ".eslintrc.js", "build.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "types": ["@cloudflare/workers-types"],
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "outDir": "./dist",
+    "declarationDir": "./dist"
+  }
 }
