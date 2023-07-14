@@ -21,21 +21,21 @@
 		}
 	},
 	"devDependencies": {
-		"@aerofoil/aerofoil-core": "^0.7.0",
-		"@aerofoil/af-ext-cloudflare": "^0.7.0",
-		"@cloudflare/workers-types": "^4.20230321.0",
-		"eslint": "^7.23.0",
+		"@aerofoil/aerofoil-core": "latest",
+		"@aerofoil/af-ext-cloudflare": "latest",
+		"@cloudflare/workers-types": "^4.20230710.1",
+		"eslint": "latest",
 		"eslint-config-aerofoil": "workspace:*",
-		"ts-node": "^10.9.1",
-		"tsc-alias": "^1.8.6",
+		"ts-node": "latest",
+		"tsc-alias": "latest",
 		"tsconfig": "workspace:*",
-		"type-fest": "^3.12.0",
-		"typescript": "^5.0.2",
-		"wrangler": "^3.1.0",
+		"type-fest": "latest",
+		"typescript": "latest",
+		"wrangler": "latest",
 		"zod": "^3.21.4"
 	},
 	"dependencies": {
-		"hono": "^3.2.4",
+		"hono": "^3.3.0",
 		"nanoid": "^4.0.2"
 	}
 }
