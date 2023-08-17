@@ -6,7 +6,7 @@
 		"typecheck": "tsc --noEmit",
 		"lint": "npx eslint src/**/*.ts",
 		"lint:fix": "npx eslint --fix src/**/*.ts",
-		"dev": "npx wrangler dev --config ./dist/wrangler.toml",
+		"dev": "aerofoil port-runner \"npx wrangler dev --config ./dist/wrangler.toml --port {port}\"",
 		"build": "tsx ./build.ts & tsc --emitDeclarationOnly --declaration & tsc-alias",
 		"preview": "aerofoil port-runner \"npx wrangler dev --config ./dist/wrangler.toml --port {port}\"",
 		"start": "aerofoil no-op",
