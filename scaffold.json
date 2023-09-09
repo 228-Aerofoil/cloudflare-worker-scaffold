@@ -1,13 +1,13 @@
 {
-	"deploymentDefaultName": "cloudflare-worker-hono-scaffold",
+	"deploymentDefaultName": "cloudflare-worker",
 	"todos": [],
-	"scaffoldScriptLocation": "./scaffold.mjs",
+	"scaffoldScriptLocation": "./scaffold.js",
 	"databaseRequirements": [],
 	"deploymentType": "",
 	"requiredExtensions": [
 		"@aerofoil/af-ext-cloudflare"
 	],
-	"version": "1.0.0",
-	"aerofoilVersion": "0.7.0",
-	"name": "cloudflare-worker-hono-scaffold"
+	"version": "2.0.0",
+	"aerofoilVersion": "0.8.0",
+	"name": "cloudflare-worker-scaffold"
 }

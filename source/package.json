@@ -23,7 +23,7 @@
 	"devDependencies": {
 		"@aerofoil/aerofoil-core": "latest",
 		"@aerofoil/af-ext-cloudflare": "latest",
-		"@cloudflare/workers-types": "^4.20230710.1",
+		"@cloudflare/workers-types": "latest",
 		"eslint": "latest",
 		"eslint-config-aerofoil": "workspace:*",
 		"tsc-alias": "latest",
@@ -32,10 +32,26 @@
 		"type-fest": "latest",
 		"typescript": "latest",
 		"wrangler": "latest",
-		"zod": "^3.21.4"
+		"zod": "v3.22.2"
 	},
 	"dependencies": {
-		"hono": "^3.3.0",
 		"nanoid": "^4.0.2"
+	},
+	"eslintConfig": {
+		"extends": [
+			"aerofoil/base"
+		],
+		"parserOptions": {
+			"sourceType": "module",
+			"project": "./tsconfig.json"
+		},
+		"settings": {
+			"import/resolver": {
+				"typescript": {
+					"alwaysTryTypes": true,
+					"project": "./tsconfig.json"
+				}
+			}
+		}
 	}
 }
