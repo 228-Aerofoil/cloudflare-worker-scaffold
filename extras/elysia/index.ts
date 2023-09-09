@@ -1,7 +1,7 @@
 import { swagger } from "@elysiajs/swagger";
 import { Elysia } from "elysia";
 import { customAlphabet } from "nanoid";
-import { healthCheck, healthCheckSchema } from "~/routes/health-check";
+import { healthCheck } from "~/routes/health-check";
 import type { Bindings } from "~/bindings";
 const nanoid = customAlphabet("0123456789abcdefghijklmnopqrstuvwxyz", 12);
 
@@ -25,7 +25,7 @@ const core = new Elysia({
 
 export type context = Parameters<Parameters<(typeof core)["all"]>[1]>[0];
 
-export const app = core.get("/health-check", healthCheck, healthCheckSchema);
+export const app = core.get("/health-check", healthCheck, healthCheck.schema);
 
 export default {
 	fetch(req: Request, env: Bindings) {
