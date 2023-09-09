@@ -48,6 +48,8 @@ export async function scaffold({
 			);
 			break;
 		case "elysia":
+			packageJSON.devDependencies["@types/lodash.clonedeep"] = "^4.5.7";
+			packageJSON.devDependencies["openapi-types"] = "^12.1.3";
 			packageJSON.dependencies["@elysiajs/swagger"] = "^0.6.1";
 			packageJSON.dependencies["@sinclair/typebox"] = "^0.31.14";
 			packageJSON.dependencies["elysia"] = "^0.6.19";
