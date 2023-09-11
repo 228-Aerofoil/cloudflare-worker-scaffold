@@ -24,6 +24,7 @@
 		"@aerofoil/aerofoil-core": "latest",
 		"@aerofoil/af-ext-cloudflare": "latest",
 		"@cloudflare/workers-types": "latest",
+		"@sinclair/typebox": "latest",
 		"eslint": "latest",
 		"eslint-config-aerofoil": "workspace:*",
 		"tsc-alias": "latest",
@@ -31,8 +32,7 @@
 		"tsx": "latest",
 		"type-fest": "latest",
 		"typescript": "latest",
-		"wrangler": "latest",
-		"zod": "v3.22.2"
+		"wrangler": "latest"
 	},
 	"dependencies": {
 		"nanoid": "^4.0.2"

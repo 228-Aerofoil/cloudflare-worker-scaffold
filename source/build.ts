@@ -1,6 +1,7 @@
 import { getTargetEnv } from "@aerofoil/aerofoil-core/util/getTargetEnv";
 import { buildWranglerToml } from "@aerofoil/af-ext-cloudflare/buildWranglerToml";
-import { z } from "zod";
+import { Type as t } from "@sinclair/typebox";
+import { TypeCompiler } from "@sinclair/typebox/compiler";
 import type { ReadonlyDeep } from "type-fest";
 
 //* import.meta.url is part of node types
@@ -10,8 +11,12 @@ interface ImportMeta {
 	url: string;
 }
 
-const envValidation = z.object({});
-const env = await getTargetEnv((import.meta as ImportMeta).url, envValidation);
+const envValidationSchema = t.Object({});
+const envValidation = TypeCompiler.Compile(envValidationSchema);
+const env = await getTargetEnv<
+	typeof envValidationSchema,
+	typeof envValidation
+>((import.meta as ImportMeta).url, envValidation);
 
 const vars = {
 	...env,
