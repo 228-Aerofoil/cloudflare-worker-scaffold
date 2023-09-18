@@ -10,7 +10,7 @@
 		"build": "tsx ./build.ts & tsc --emitDeclarationOnly --declaration & tsc-alias",
 		"preview": "aerofoil port-runner \"npx wrangler dev --config ./dist/wrangler.toml --port {port}\"",
 		"start": "aerofoil no-op",
-		"deploy:production": "aerofoil deploy --local-package"
+		"af:deploy": "aerofoil deploy --local-package"
 	},
 	"type": "module",
 	"types": "./dist/index.d.ts",
