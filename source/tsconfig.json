@@ -1,6 +1,6 @@
 {
-	"extends": "tsconfig/ts-cf-worker.json",
-	"include": ["./src/**/*", ".eslintrc.js", "build.ts"],
+	"extends": "@@tsconfig@@",
+	"include": ["./src/**/*", "build.ts"],
 	"exclude": ["node_modules"],
 	"compilerOptions": {
 		"types": ["@cloudflare/workers-types"],

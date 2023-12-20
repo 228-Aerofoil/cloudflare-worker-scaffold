@@ -4,8 +4,8 @@
 	"private": true,
 	"scripts": {
 		"typecheck": "tsc --noEmit",
-		"lint": "npx eslint src/**/*.ts",
-		"lint:fix": "npx eslint --fix src/**/*.ts",
+		"lint": "biome check ./",
+		"lint:fix": "biome check --apply ./src",
 		"dev": "aerofoil port-runner \"npx wrangler dev --config ./dist/wrangler.toml --port {port}\"",
 		"build": "tsx ./build.ts & tsc --emitDeclarationOnly --declaration & tsc-alias",
 		"preview": "aerofoil port-runner \"npx wrangler dev --config ./dist/wrangler.toml --port {port}\"",

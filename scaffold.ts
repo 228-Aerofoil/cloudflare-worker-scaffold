@@ -5,7 +5,6 @@ import type {
 } from "@aerofoil/aerofoil-core/type/ScaffoldManifest";
 import {
 	type PackageJson,
-	type TsConfigJson,
 	generateScaffoldMetadata,
 } from "@aerofoil/aerofoil-core/util/generateScaffoldMetadata";
 import { logger } from "@aerofoil/logger";
@@ -20,14 +19,15 @@ import type {
 } from "@babel/types";
 
 export const scaffold: ScaffoldScriptFunction = async (options) => {
-	const { deployInfo, deploymentRootPath, loadJsonFile, loadScriptFile } =
-		await generateScaffoldMetadata(options, {
-			deploymentTypeFilter: ["@cloudflare/worker"],
-		});
-	const tsConfigName = `${deployInfo.scaffoldSource?.replace(
-		/\\|@|\//g,
-		"-",
-	)}.tsconfig.json`;
+	const {
+		deployInfo,
+		deploymentRootPath,
+		loadJsonFile,
+		loadScriptFile,
+		extendAndAdoptTsConfig,
+	} = await generateScaffoldMetadata(options, {
+		deploymentTypeFilter: ["@cloudflare/worker"],
+	});
 
 	await using packageJson = await loadJsonFile<PackageJson>("package.json");
 	packageJson.name = `@${options.projectConfig.name}/${deployInfo.name}`;
@@ -39,30 +39,13 @@ export const scaffold: ScaffoldScriptFunction = async (options) => {
 		[["none"], ["hono", "elysia"]],
 	);
 
-	await logger.awaitText(async () => {
-		//todo don't override this if it exists
-		await options.fs.copy(
-			path.resolve(options.scaffoldPath, "extras", "tsconfig.json"),
-			path.resolve(
-				options.projectRootPath,
-				"libraries",
-				"tsconfig",
-				tsConfigName,
+	await logger.awaitText(
+		() =>
+			extendAndAdoptTsConfig(
+				path.resolve(options.scaffoldPath, "extras", "tsconfig.json"),
 			),
-		);
-		await using tsConfigPackageJson = await loadJsonFile<PackageJson>(
-			"../../libraries/tsconfig/package.json",
-		);
-		if (!tsConfigPackageJson.files?.includes(tsConfigName)) {
-			tsConfigPackageJson.files = [
-				...(tsConfigPackageJson.files ?? []),
-				tsConfigName,
-			];
-		}
-		await using tsConfigJson =
-			await loadJsonFile<TsConfigJson>("tsconfig.json");
-		tsConfigJson.extends = `tsconfig/${tsConfigName}`;
-	}, "Creating tsconfig");
+		"Creating tsconfig",
+	);
 
 	if (framework === "none") {
 		await options.fs.copy(
