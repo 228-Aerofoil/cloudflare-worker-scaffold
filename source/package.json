@@ -23,10 +23,9 @@
 	"devDependencies": {
 		"@aerofoil/aerofoil-core": "latest",
 		"@aerofoil/af-ext-cloudflare": "latest",
+		"@biomejs/biome": "1.4.1",
 		"@cloudflare/workers-types": "latest",
 		"@sinclair/typebox": "latest",
-		"eslint": "latest",
-		"eslint-config-aerofoil": "workspace:*",
 		"tsc-alias": "latest",
 		"tsconfig": "workspace:*",
 		"tsx": "latest",
@@ -36,22 +35,5 @@
 	},
 	"dependencies": {
 		"nanoid": "^4.0.2"
-	},
-	"eslintConfig": {
-		"extends": [
-			"aerofoil/base"
-		],
-		"parserOptions": {
-			"sourceType": "module",
-			"project": "./tsconfig.json"
-		},
-		"settings": {
-			"import/resolver": {
-				"typescript": {
-					"alwaysTryTypes": true,
-					"project": "./tsconfig.json"
-				}
-			}
-		}
 	}
 }

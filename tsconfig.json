@@ -1,0 +1,41 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Default",
+	"compilerOptions": {
+		"sourceMap": true,
+		"declaration": true,
+		"module": "ESNext",
+		"target": "ES2022",
+		"lib": [
+			"ESNext"
+		],
+		"types": [
+			"node"
+		],
+		"strict": true,
+		"alwaysStrict": true,
+		"strictNullChecks": true,
+		"preserveConstEnums": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"experimentalDecorators": false,
+		"forceConsistentCasingInFileNames": true,
+		"incremental": true,
+		"noImplicitAny": true,
+		"allowUmdGlobalAccess": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"noErrorTruncation": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noUncheckedIndexedAccess": true,
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"verbatimModuleSyntax": true
+	},
+	"exclude": [
+		"node_modules"
+	]
+}

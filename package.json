@@ -1,5 +1,5 @@
 {
-	"name": "cloudflare-worker-scaffold",
+	"name": "astro-page-scaffold",
 	"version": "2.0.0",
 	"description": "",
 	"main": "index.js",
@@ -8,15 +8,13 @@
 	"author": "228 - Michael Kassabov",
 	"license": "ISC",
 	"dependencies": {
-		"@aerofoil/aerofoil-core": "latest",
+		"@aerofoil/aerofoil-core": "link:D:/Code/228/aerofoil/aerofoil/libraries/aerofoil-core",
 		"@aerofoil/logger": "latest",
-		"typescript": "latest"
+		"@babel/types": "^7.23.6",
+		"typescript": "^5.3.3"
 	},
 	"devDependencies": {
-		"prettier": "latest"
-	},
-	"prettier": {
-		"endOfLine": "auto",
-		"useTabs": true
+		"@biomejs/biome": "1.4.1",
+		"@types/node": "^20.10.4"
 	}
 }

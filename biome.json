@@ -1,0 +1,41 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
+	"files": {
+		"ignore": ["dist", "templates"],
+		"include": ["./src"]
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"formatter": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"correctness": {
+				"noUnusedVariables": "error",
+				"noUndeclaredVariables": "error"
+			},
+			"suspicious": {
+				"noExplicitAny": "error"
+			},
+			"style": {
+				"noImplicitBoolean": "error",
+				"useCollapsedElseIf": "error",
+				"useNamingConvention": "error",
+				"useBlockStatements": "error",
+				"noNegationElse": "error",
+				"noNamespace": "error"
+			},
+			"nursery": {
+				"noUnusedImports": "error",
+				"useGroupedTypeImport": "error",
+				"useAwait": "error",
+				"noDuplicateJsonKeys": "error",
+				"noImplicitAnyLet": "error"
+			}
+		}
+	}
+}

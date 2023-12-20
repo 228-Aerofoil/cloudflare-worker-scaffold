@@ -1,10 +1,10 @@
 import { Hono } from "hono";
-import { BaseRouterType } from "~/index";
+import type { BaseRouterType } from "~/index";
 
 export const healthCheck = new Hono<BaseRouterType>().get(
 	"/health-check",
 	(c) =>
-		c.jsonT({
+		c.json({
 			req: c.get("reqId"),
 			meta: {
 				colo: c.req.raw.cf?.colo as string,
@@ -14,5 +14,5 @@ export const healthCheck = new Hono<BaseRouterType>().get(
 				regionCode: c.req.raw.cf?.regionCode as string,
 				httpProtocol: c.req.raw.cf?.httpProtocol as string,
 			},
-		})
+		}),
 );
