@@ -69,9 +69,9 @@ export const scaffold: ScaffoldScriptFunction = async (options) => {
 
 		await using coreTs = await loadScriptFile("./src/core.ts");
 
-		packageJson.dependencies.elysia = "^0.7.30";
-		packageJson.dependencies["@elysiajs/swagger"] = "^0.7.4";
-		packageJson.dependencies["@sinclair/typebox"] = "^0.31.17";
+		packageJson.dependencies.elysia = "^0.8.3";
+		packageJson.dependencies["@elysiajs/swagger"] = "^0.8.0";
+		packageJson.dependencies["@sinclair/typebox"] = "^0.32.0";
 		packageJson.devDependencies["openapi-types"] = "^12.1.3";
 
 		try {
